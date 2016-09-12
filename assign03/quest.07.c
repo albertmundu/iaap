@@ -2,7 +2,6 @@
 #include <math.h>
 #include <string.h>
 
-
 void check(char (*)[],int n);
 
 int main(){

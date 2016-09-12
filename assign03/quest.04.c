@@ -15,7 +15,6 @@ int main(){
         for(int j=0;j<n;j++)
             scanf("%d",&mat[i][j]);
     
-    
     puts("Along rows: ");
     alongRow(mat,n);
 
@@ -73,7 +72,6 @@ void alongCol(int (*mat)[],int n){
     for(int i=0;i<n;i++)
         for(int j=0;j<n;j++)
             aux[i][j]=tmp[j][i];
-
     
     for(int i=0;i<n;i++)
     {
@@ -109,5 +107,4 @@ void uniqValues(int (*mat)[],int n){
         prev=aux[i];
 
     }
-
 }

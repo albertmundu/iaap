@@ -7,7 +7,6 @@ void transpose(int (*)[],int*m,int*n);
 
 int main(){
     int m,n;
-    //int mat[10][10];
     scanf("%d%d",&m,&n);
     int mat[m][n];
     for(int i=0;i<m;i++)
@@ -16,13 +15,11 @@ int main(){
 
     transpose(mat,&m,&n);
 
-   for(int i=0;i<m;i++){
+    for(int i=0;i<m;i++){
        for(int j=0;j<n;j++)
             printf("%2d ",mat[i][j]);
         nl;
-   }
-    
-    
+    }
 }
 
 void transpose(int (*arr)[], int *m, int *n){
