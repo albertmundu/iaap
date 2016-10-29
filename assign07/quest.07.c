@@ -15,27 +15,6 @@ struct node*createnode(int data){
     return tmp;
 }
 
-void insert(struct node**root,int data){
-    struct node*newnode=createnode(data);
-    if(*root==NULL){
-        *root=newnode;
-    }
-    else {
-        struct node*parent=NULL,*child=*root;
-        for(;child!=NULL;){
-            parent=child;
-            if(data <= child->data)
-                child=child->left;
-            else
-                child=child->right;
-        }
-        if(data <= parent->data)
-            parent->left=newnode;
-        else
-            parent->right=newnode;
-    }
-}
-
 int find(int *arr,int s, int e,int k){
     for(int i=s;i<=e;i++)
         if(arr[i]==k)
