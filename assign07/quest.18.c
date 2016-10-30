@@ -1,5 +1,6 @@
 #include <stdio.h>
 #include <stdlib.h>
+#include <limits.h>
 
 
 struct node {
@@ -35,28 +36,40 @@ void insert(struct node**root,int data){
     }
 }
 
-int post(struct node*root,int depth){
-    if(root){
-        int lheight=post(root->left,depth+1);
-        int rheight=post(root->right,depth+1);
-        int height=0;
-        if(lheight>=rheight)
-            height=lheight;
-        else
-            height=rheight;
-        printf("node: %d height: %d depth: %d\n",root->data,height,depth);
-
-        return height+1;
+int count(struct node*root,int data){
+    struct node*child=root;
+    int cnt=0;
+    for(;child!=NULL;cnt++){
+        if(data == child->data)
+            return cnt;
+        if(data < child->data)
+            child=child->left;
+        else if(data > child->data)
+            child=child->right;
     }
-    return 0;
+    return -1;
 }
+struct node* common_ancestor(struct node*root,int k1,int k2){
+    if(root==NULL)
+        return NULL;
 
+    if(k1<root->data && k2<root->data)
+        return common_ancestor(root->left,k1,k2);
+    else if(k1>root->data && k2>root->data)
+        return common_ancestor(root->right,k1,k2);
+    else
+        return root;
+}
+int distance(struct node*root,int k1,int k2){
+    struct node*common=common_ancestor(root,k1,k2);
+    return count(common,k1)+count(common,k2);
+}
 int main(){
     struct node*root=NULL;
-    int n,data;
+    int n,data,k1,k2;
     scanf("%d",&n);
     while(n--){scanf("%d",&data);insert(&root,data);}
-    post(root,0);
-    printf("\n");
+    scanf("%d%d",&k1,&k2);
+    printf("%d\n",distance(root,k1,k2));
     return 0;
 }
