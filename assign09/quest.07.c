@@ -89,10 +89,13 @@ int unionset(int data1,int data2){
     struct node*p2=findset(n2); //finding the representative of n2
 
     //main logic
-    if(n1->parent)
+    if(n1->parent!=n1 && n2->parent!=n2 && p1==p2)
+    {
+        return 1;
+    }
 
     if(p1->data == p2->data) //already of the same set? return if yes
-        return;
+        return 0;
     if(p1->rank >= p2->rank){ //if not of the same set
         p1->rank=(p1->rank==p2->rank)?p1->rank+1:p1->rank;
         p2->parent=p1;
@@ -110,6 +113,7 @@ struct hash {
 int main(){
     int t,n;
     int **mat=NULL;
+    int status=0;
     scanf("%d",&t);
     while(t--){
         scanf("%d",&n);
@@ -119,10 +123,32 @@ int main(){
             mat[i]=(int*)malloc(sizeof(int)*n);
             for(int j=0;j<n;j++){
                 scanf("%d",&mat[i][j]);
-                if(mat[i][j]==1)
-                    unionset(i+1,j+1);
             }
         }
+        for(int i=0;i<n;i++){
+            if(status==1)
+                break;
+            for(int j=i+1;j<n;j++){
+                if(mat[i][j]==1){
+                    if(unionset(i+1,j+1)){
+                        status=1;
+                        break;
+                    }
+                }
+            }
+        }
+        for(int i=0;i<n;i++)
+            free(mat[i]);
+        free(mat);
+        if(status==1)
+        {
+            printf("Yes\n");
+        }
+        else {
+            printf("No\n");
+        }
+        status=0;
+        pool_head=NULL;
 
     }
 }
@@ -130,18 +156,17 @@ int main(){
 /* sample input */
 /*
 2
+5
+0 1 1 1 1
+1 0 1 1 0
+1 1 0 0 1
+1 1 0 0 0
+1 0 1 0 0
 6
-0 1 1 1 0 0
-1 0 1 0 1 0
-1 1 1 1 0 0
-0 1 0 1 0 0
-0 0 0 0 0 0
-0 0 0 0 0 0
-6
-0 1 1 1 0 0
-1 0 1 0 1 1
-1 1 1 1 0 0
-0 1 0 1 0 0
 0 1 0 0 0 0
-0 1 0 0 0 1
+1 0 1 0 0 0
+0 1 0 1 0 0
+0 0 1 0 1 0
+0 0 0 1 0 1
+0 0 0 0 1 0
 */

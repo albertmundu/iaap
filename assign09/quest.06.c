@@ -131,7 +131,7 @@ int main(){
             printf("Connected\n");
         else
             printf("Disconnected\n");
-
+        pool_head=NULL; //free bst
     }
 }
 
