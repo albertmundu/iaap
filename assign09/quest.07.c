@@ -75,17 +75,21 @@ struct node*findset(struct node*nd){
     struct node*p=nd->parent;
     if(p==nd)
         return p;
-    nd->parent=findset(nd->parent);
-    return nd->parent;
+    //nd->parent=findset(nd->parent);
+    //return nd->parent;
+    return findset(nd->parent);
 }
 int findsetbyelement(int data){
     return findset(get(data))->data;
 }
-void unionset(int data1,int data2){
+int unionset(int data1,int data2){
     struct node*n1=get(data1);
     struct node*n2=get(data2);
     struct node*p1=findset(n1); //finding the representative of n1
     struct node*p2=findset(n2); //finding the representative of n2
+
+    //main logic
+    if(n1->parent)
 
     if(p1->data == p2->data) //already of the same set? return if yes
         return;
@@ -96,6 +100,7 @@ void unionset(int data1,int data2){
     else{
         p1->parent=p2;
     }
+    return 0;
 }
 
 struct hash {
@@ -118,19 +123,6 @@ int main(){
                     unionset(i+1,j+1);
             }
         }
-        int rep=findsetbyelement(1),connected=1;
-
-        for(int i=1;i<=n;i++)
-        {
-            if(rep!=findsetbyelement(i)){
-                connected=0;
-                break;
-            }
-        }
-        if(connected)
-            printf("Connected\n");
-        else
-            printf("Disconnected\n");
 
     }
 }

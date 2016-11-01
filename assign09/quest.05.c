@@ -10,7 +10,8 @@ struct node {
 
 struct pool {
     struct node*value;
-    struct pool*next;
+    struct pool*left;
+    struct pool*right;
 };
 
 struct pool*pool_head=NULL;
@@ -26,7 +27,8 @@ struct node*createnode(int data){
 struct pool *createpool(struct node*value){
     struct pool*tmp=(struct pool*)malloc(sizeof(struct pool));
     tmp->value=value;
-    tmp->next=NULL;
+    tmp->left=NULL;
+    tmp->right=NULL;
     return tmp;
 }
 
@@ -35,17 +37,30 @@ void insert(struct node*value){ //insert into pool
         pool_head=createpool(value);
     }
     else {
-        struct pool*tmp=pool_head;
-        for(;tmp->next!=NULL;tmp=tmp->next);
-        tmp->next=createpool(value);
+        struct pool*child=pool_head,*parent=NULL;
+        for(;child!=NULL;){
+            parent=child;
+            if(value->data <= child->value->data)
+                child=child->left;
+            else if(value->data > child->value->data)
+                child=child->right;
+        }
+        if(value->data <= parent->value->data)
+            parent->left=createpool(value);
+        else if(value->data > parent->value->data)
+            parent->right=createpool(value);
     }
 }
 
 struct node*get(int data){
-    struct pool*tmp=pool_head;
-    for(;tmp!=NULL;tmp=tmp->next){
-        if(tmp->value->data==data)
-            return tmp->value;
+    struct pool*child=pool_head;
+    for(;child!=NULL;){
+        if(data == child->value->data)
+            return child->value;
+        if(data < child->value->data)
+            child=child->left;
+        else if(data > child->value->data)
+            child=child->right;
     }
     return NULL;
 }
@@ -149,3 +164,28 @@ int main(){
 
     }
 }
+/* sample input
+2
+10
+0 1 1 0 0 0 0 0 0 0
+1 0 1 0 0 0 0 0 0 0
+1 1 0 1 0 0 0 0 0 0
+0 0 1 0 0 0 0 0 0 0
+0 0 0 0 0 1 1 0 0 0
+0 0 0 0 1 0 1 0 0 0
+0 0 0 0 1 1 0 0 0 0
+0 0 0 0 0 0 0 0 1 0
+0 0 0 0 0 0 0 1 0 0
+0 0 0 0 0 0 0 0 0 0
+10
+0 1 1 0 0 0 0 0 0 0
+1 0 1 0 0 0 0 0 0 0
+1 1 0 1 0 0 0 0 0 0
+0 0 1 0 0 0 0 0 0 0
+0 0 0 0 0 1 1 0 0 0
+0 0 0 0 1 0 1 1 0 0
+0 0 0 0 1 1 0 0 1 0
+0 0 0 0 0 1 0 0 1 0
+0 0 0 0 0 0 1 1 0 0
+0 0 0 0 0 0 0 0 0 0
+*/

@@ -10,7 +10,8 @@ struct node {
 struct pool {
     int key;//not required
     struct node*value;
-    struct pool*next;
+    struct pool*left;
+    struct pool*right;
 };
 struct pool *head=NULL;
 
@@ -18,7 +19,8 @@ struct pool*createpool(int key,struct node*value){
     struct pool*tmp=(struct pool*)malloc(sizeof(struct pool));
     tmp->key=key;
     tmp->value=value;
-    tmp->next=NULL;
+    tmp->left=NULL;
+    tmp->right=NULL;
     return tmp;
 }
 
@@ -27,17 +29,33 @@ void insert(int key, struct node*value){
         head=createpool(key,value);
     }
     else {
-        struct pool*tmp=head;
-        for(;tmp->next!=NULL;tmp=tmp->next);
-        tmp->next=createpool(key,value);
+        struct pool*child=head,*parent=NULL;
+
+        for(;child!=NULL;)
+        {
+            parent=child;
+            if(key <= child->key)
+                child=child->left;
+            else if(key > child->key)
+                child=child->right;
+        }
+        if(key <= parent->key)
+            parent->left=createpool(key,value);
+        else if(key > parent->key)
+            parent->right=createpool(key,value);
     }
 }
 
 struct node*get(int data){
-    struct pool*tmp=head;
-    for(;tmp!=NULL;tmp=tmp->next){
-        if(tmp->value->data==data)//if(tmp->key==data) 
-            return tmp->value;
+    struct pool*child=head;
+    for(;child!=NULL;){
+        if(data == child->key){
+            return child->value;
+        }
+        if(data < child->key)
+            child=child->left;
+        else if( data > child->key)
+            child=child->right;
     }
     return NULL;
 }
