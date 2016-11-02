@@ -55,7 +55,7 @@ int search(struct node*root,int k){
 void inorder(struct node*root,struct node**pre,struct node**key, struct node**suc, int k){
 	if(root)
 	{
-		inorder(root->left,pre,key,succ,k);
+		inorder(root->left,pre,key,suc,k);
 		if(!*suc) {
             if(*key) {
                 *suc=root;    
@@ -90,7 +90,7 @@ int main(){
     if(key) {
         if(pre)
             printf("%d ",pre->data);
-        if(succ)    
+        if(suc)    
             printf("%d ",suc->data);
     } else {
         printf("INFO: No key=%d in BST\n",k);
