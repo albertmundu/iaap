@@ -8,6 +8,8 @@ struct node {
     struct node * right;
 };
 
+#define swap(a,b){struct node*t=a;a=b;b=t;}
+
 struct node* createnode(int data){
     struct node*tmp=malloc(sizeof(struct node));
     tmp->data=data;
@@ -25,14 +27,21 @@ void insert(struct node **root,int data){
         for(;child!=NULL;){
             parent=child;
             if(data <= child->data)
-                child=child->right;
-            else
                 child=child->left;
+            else
+                child=child->right;
         }
         if(data <= parent->data)
-            parent->right=newnode;
-        else
             parent->left=newnode;
+        else
+            parent->right=newnode;
+    }
+}
+void mirror(struct node*root){
+    if(root){
+        mirror(root->left);
+        mirror(root->right);
+        swap(root->left,root->right);
     }
 }
 
@@ -53,6 +62,8 @@ int main(){
         scanf("%d",&data);
         insert(&root,data);
     }
+    inorder_traversal(root);
+    mirror(root);
     inorder_traversal(root);
     printf("\n");
     return 0;
