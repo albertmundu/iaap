@@ -1,0 +1,23 @@
+1. [Make a binary search tree (BST) and do K search operations.](https://github.com/albertmunda/iaap/blob/master/assign08/quest.01.c)
+2. 
+3. 
+4.
+5.
+6.
+7.
+8.
+9.
+10.
+11.
+12.
+13.
+14.
+15.
+16.
+17.
+18.
+19.
+20.
+21.
+22.
+23.
