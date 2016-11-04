@@ -47,6 +47,13 @@ int checkSumTree(struct node*root){
     return 0;
 }
 
+void post_delete(struct node**root){
+    if(*root){
+        post_delete(&((*root)->left));
+        post_delete(&((*root)->right));
+        free(*root);
+    }
+}
 int main(){
     struct node*root=NULL;
     int n,*arr=NULL;
@@ -59,5 +66,7 @@ int main(){
         printf("Yes\n");
     else
         printf("No\n");
+    free(arr);
+    post_delete(&root);
     return 0;
 }
