@@ -1,4 +1,5 @@
-*Binary Search Trees*
+**Binary Search Trees**
+
 1. [Make a binary search tree (BST) and do K search operations.](https://github.com/albertmunda/iaap/blob/master/assign08/quest.01.c) 
 2. [Print BST in preorder, inorder and postorder.](https://github.com/albertmunda/iaap/blob/master/assign08/quest.02.c) 
 3. [Find if the two trees are identical](https://github.com/albertmunda/iaap/blob/master/assign08/quest.03.c) 
