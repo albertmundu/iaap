@@ -1,23 +1,24 @@
+*Binary Search Trees*
 1. [Make a binary search tree (BST) and do K search operations.](https://github.com/albertmunda/iaap/blob/master/assign08/quest.01.c)
-2. 
-3. 
-4.
-5.
-6.
-7.
-8.
-9.
-10.
-11.
-12.
-13.
-14.
-15.
-16.
-17.
-18.
-19.
-20.
-21.
-22.
-23.
+2. [Print BST in preorder, inorder and postorder.](https://github.com/albertmunda/iaap/blob/master/assign08/quest.02.c)
+3. [Find if the two trees are identical](https://github.com/albertmunda/iaap/blob/master/assign08/quest.03.c)
+4. [Given a BST, print out all root-to-leaf paths.](https://github.com/albertmunda/iaap/blob/master/assign08/quest.04.c)
+5. [Find the number of leaves in a BST.](https://github.com/albertmunda/iaap/blob/master/assign08/quest.05.c)
+6. [Find sum of all the leaf nodes in a BST.](https://github.com/albertmunda/iaap/blob/master/assign08/quest.06.c)
+7. [Construct a binary tree given inoder and postorder traversal outputs.](https://github.com/albertmunda/iaap/blob/master/assign08/quest.07.c)
+8. [Construct a binary tree given preorder and postorder traversal outputs.](https://github.com/albertmunda/iaap/blob/master/assign08/quest.08.c)
+9. [Delete a BST](https://github.com/albertmunda/iaap/blob/master/assign08/quest.09.c)
+10. [Construct the mirror tree of a given BST.](https://github.com/albertmunda/iaap/blob/master/assign08/quest.10.c)
+11. [Print all the nodes which are at K distance from root.](https://github.com/albertmunda/iaap/blob/master/assign08/quest.11.c)
+12. [Find out the in-order successor and predecessor of a given node in a BST.](https://github.com/albertmunda/iaap/blob/master/assign08/quest.12.c)
+13. [Print all the ancestors of the key in the given BST.](https://github.com/albertmunda/iaap/blob/master/assign08/quest.13.c)
+14. [Delete all the terminal nodes in BST.](https://github.com/albertmunda/iaap/blob/master/assign08/quest.14.c)
+15. [Delete all the nodes by repeated deletion of root.]
+16. [Given a binary tree, find if it is a BST.](https://github.com/albertmunda/iaap/blob/master/assign08/quest.16.c)
+17. [Check if the given binary tree is SumTree.]
+18. [Find the distance between two given keys in a BST.](https://github.com/albertmunda/iaap/blob/master/assign08/quest.18.c)
+19. [Print all the nodes in a BST along with their individual heights and depths.](https://github.com/albertmunda/iaap/blob/master/assign08/quest.19.c)
+20. [Print output of depth first search given a BST.](https://github.com/albertmunda/iaap/blob/master/assign08/quest.20.c)
+21. [Print output of breadth first search given a BST.](https://github.com/albertmunda/iaap/blob/master/assign08/quest.21.c)
+22. [Remove all nodes which don't lie in any path with sum>=k.](https://github.com/albertmunda/iaap/blob/master/assign08/quest.22.c)
+23. [Delete all duplicates of a node from a given binary search tree.]
