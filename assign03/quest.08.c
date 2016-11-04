@@ -1,10 +1,6 @@
 #include <stdio.h>
 
 int main(){
-<<<<<<< HEAD
-
-=======
->>>>>>> d3d5275e4c1913c3933f231cc81a12f9ec79079d
     int n;
     scanf("%d",&n);
     int mat[n][n],sum=0,count=0;

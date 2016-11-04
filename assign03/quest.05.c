@@ -1,26 +1,13 @@
 #include <stdio.h>
 #include <string.h>
 #define nl puts("")
-<<<<<<< HEAD
-
-void sort(char (*arr)[],int n);
-
-
-int main(){
-
-=======
 void sort(char (*arr)[],int n);
 
 int main(){
->>>>>>> d3d5275e4c1913c3933f231cc81a12f9ec79079d
     int n;
     scanf("%d",&n);
     char name[n][30];
     char prev[30];
-<<<<<<< HEAD
-
-=======
->>>>>>> d3d5275e4c1913c3933f231cc81a12f9ec79079d
     for(int i=0;i<n;i++){
         scanf("%s",name[i]);
     }

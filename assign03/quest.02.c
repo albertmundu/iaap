@@ -1,17 +1,8 @@
 #include <stdio.h>
-
-<<<<<<< HEAD
-
 int main(){
     int n;
     scanf("%d",&n);
-
     int mat[n][n];
-=======
-int main(){
-    int n;
-    scanf("%d",&n);
->>>>>>> d3d5275e4c1913c3933f231cc81a12f9ec79079d
     int sum=0,psum=0;
     int mindex=0;
 
@@ -35,9 +26,5 @@ int main(){
         }
     }
     printf("index: %d",mindex+1);
-<<<<<<< HEAD
-
-=======
->>>>>>> d3d5275e4c1913c3933f231cc81a12f9ec79079d
     return 0;
 }

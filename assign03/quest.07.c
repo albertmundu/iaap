@@ -2,10 +2,6 @@
 #include <math.h>
 #include <string.h>
 
-<<<<<<< HEAD
-
-=======
->>>>>>> d3d5275e4c1913c3933f231cc81a12f9ec79079d
 void check(char (*)[],int n);
 
 int main(){
