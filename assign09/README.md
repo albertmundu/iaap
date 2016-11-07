@@ -1,4 +1,5 @@
-**Disjoint Sets**
+Disjoint Sets
+-------------
 >Assignments for the disjoint set is being stored in the directory
 
 1. [Operations on Disjoint set.](https://github.com/albertmunda/iaap/blob/master/assign09/quest.01.c)
@@ -8,4 +9,3 @@
 5. [Find out the number of connected component.](https://github.com/albertmunda/iaap/blob/master/assign09/quest.05.c)
 6. [Check whether given graph is connected or not.](https://github.com/albertmunda/iaap/blob/master/assign09/quest.06.c)
 7. [Detect cycle in a given undirected graph.](https://github.com/albertmunda/iaap/blob/master/assign09/quest.07.c)
-
