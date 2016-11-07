@@ -53,7 +53,7 @@ public:
             p1->parent=p2;
     }
     ~DisjointSet(){
-        mp->clear();ed 
+        mp->clear();ed
     }
 };
 int main() {

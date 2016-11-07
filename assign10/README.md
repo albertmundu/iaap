@@ -1,8 +1,8 @@
 Minimum Spanning Tree
 ----------------------
 
-1. Find a Minimum Spanning Tree using Kruskal's algorithm.
-2. Find a Minimum Spanning Tree using Prim's algorithm.
+1. [Find a Minimum Spanning Tree using Kruskal's algorithm.](https://github.com/albertmunda/iaap/blob/master/assign10/quest.01.c)
+2. [Find a Minimum Spanning Tree using Prim's algorithm.](https://github.com/albertmunda/iaap/blob/master/assign10/quest.02.c)
 
 Sample Inputs
 -------------------
