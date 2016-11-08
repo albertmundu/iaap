@@ -39,18 +39,11 @@ void delete(int *arr,int *n,int data){
 void insert(int *arr,int *n,int data){
     arr[*n-1]=data;
     int i=*n-1;
-    int parent;
-    if(i&1) //parent=i/2 if array index starts from 1
-        parent=i/2;
-    else
-        parent=i/2-1;
+    int parent=(i-1)/2;
     while(arr[parent]<arr[i] && parent>=0){
         swap(arr[parent],arr[i]);
         i=parent;
-        if(i&1)
-            parent=i/2;
-        else
-            parent=i/2-1;
+        parent=(i-1)/2;
     }
     printf("inserted\n");
 }
