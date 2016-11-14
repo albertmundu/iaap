@@ -4,6 +4,6 @@
     "version": "0.1.0",
     "command": "gcc",
     "isShellCommand": true,
-    "args": ["-std=c11","-pedantic","-Wall","-ggdb","quest.03.c"],
+    "args": ["-std=c11","-pedantic","-Wall","-ggdb","quest.04.c"],
     "showOutput": "always"
 }
