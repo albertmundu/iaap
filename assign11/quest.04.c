@@ -107,9 +107,9 @@ struct node*find_minimum(struct node*root){
 struct node*delete(struct node*root,int key){
     if(root==NULL)
         return root;
-    if(key < root->left->data)
+    if(key < root->data)
         root->left=delete(root->left,key);
-    else if(key > root->right->data)
+    else if(key > root->data)
         root->right=delete(root->right,key);
     else{
         if(root->left==root->right)
@@ -141,7 +141,20 @@ struct node*delete(struct node*root,int key){
 
     int balance=get_balance_factor(root);
 
-    
+    if(balance > 1 && get_balance_factor(root->left) >= 0)
+        return right_rotate(root);
+    if(balance > 1 && get_balance_factor(root->left) < 0){
+        root->left=left_rotate(root->left);
+        return right_rotate(root);
+    }
+
+    if(balance < -1 && get_balance_factor(root->right) <= 0)
+        return left_rotate(root);
+    if(balance < -1 && get_balance_factor(root->right) > 0){
+        root->right=right_rotate(root->right);
+        return left_rotate(root);
+    }
+    return root;
 }
 
 int main(){
@@ -152,12 +165,15 @@ int main(){
         scanf("%d",&data);
         root=insert(root,data);
     }
-    scanf("%d",&k);
     preorder(root);
+    printf("\n");
+    scanf("%d",&k);
     while(k--){
         scanf("%d",&data);
-        delete(root,data);
+        root=delete(root,data);
         preorder(root);
+        printf("\n");
     }
+    return 0;
 }
 
