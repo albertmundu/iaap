@@ -1,17 +1,36 @@
 #include <stdio.h>
-#include <stdlib.h>
-#define swap(a,b){int t=a;a=b;b=t;} 
 
-void heapify(int *arr,int n,int i){
-    int left=2*i+1;
-    int right=2*i+2;
-    int min=i;
-    if(left <= n && arr[left]<arr[min])
-        min=left;
-    if(right <=n && arr[right]<arr[min])
-        min=right;
-    if(min!=i){
-        swap(arr[min],arr[i]);
-        heapify(arr,n,min);
-    }
+
+int max(int a,int b){
+    return (a>b)?1:0;
+}
+
+int main(){
+    int A=0;
+    int B=0;
+    int a0; 
+    int a1; 
+    int a2; 
+    scanf("%d %d %d",&a0,&a1,&a2);
+    int b0; 
+    int b1; 
+    int b2; 
+    scanf("%d %d %d",&b0,&b1,&b2);
+    if(max(a0,b0))
+        A++;
+    else if(max(b0,a0))
+        B++;
+    
+    if(max(a1,b1))
+        A++;
+    else if(max(b1,a1))
+        B++;
+
+    if(max(a2,b2))
+        A++;
+    else if(max(b2,a2))
+        B++;
+
+    printf("%d %d\n",A,B);
+    return 0;
 }
