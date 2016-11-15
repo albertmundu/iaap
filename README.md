@@ -12,4 +12,6 @@ Assignments
  7. [Binary Heaps](https://github.com/albertmunda/iaap/tree/master/assign07)
  8. [Binary Search Trees](https://github.com/albertmunda/iaap/tree/master/assign08)
  9. [Disjoint Sets](https://github.com/albertmunda/iaap/tree/master/assign09)
- 10. [Minimum Spanning Tree.](https://github.com/albertmunda/iaap/tree/master/assign10)
+ 10. [Minimum Spanning Tree](https://github.com/albertmunda/iaap/tree/master/assign10)
+ 11. [Self Balancing BST](https://github.com/albertmunda/iaap/tree/master/assign11)
+ 12. [Eulerian and Hamiltonian Circuits](https://github.com/albertmunda/iaap/tree/master/assign12)

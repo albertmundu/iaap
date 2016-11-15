@@ -140,6 +140,8 @@ struct node*delete(struct node*root,int key){
     root->height=max(get_height(root->left),get_height(root->right))+1;
 
     int balance=get_balance_factor(root);
+
+    
 }
 
 int main(){
@@ -158,3 +160,4 @@ int main(){
         preorder(root);
     }
 }
+
