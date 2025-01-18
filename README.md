@@ -15,3 +15,8 @@ Assignments
  10. [Minimum Spanning Tree](https://github.com/albertmunda/iaap/tree/master/assign10)
  11. [Self Balancing BST](https://github.com/albertmunda/iaap/tree/master/assign11)
  12. [Eulerian and Hamiltonian Circuits](https://github.com/albertmunda/iaap/tree/master/assign12)
+
+
+[Note]
+> The assignments are solved using C language. I have also updated the repo with the Java and Python variants.
+
